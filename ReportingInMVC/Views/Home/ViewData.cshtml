@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ReportingInMVC.EDM.tblemp>
+
+@{
+    ViewBag.Title = "ViewData";
+}
+
+<h2>ViewData</h2>
+
+<p>
+    <a href="~/Reporting/WebForm1.aspx">View Report</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_add)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_mob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_dob)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_add)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_mob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_dob)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
